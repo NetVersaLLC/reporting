@@ -1,0 +1,1433 @@
+  [1m[36m (97.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (164.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20130517165453)
+  [1m[35m (74.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (105.1ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`) [0m
+  [1m[35m (135.9ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`) 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130517165453')
+  [1m[36m (20.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:22:47 -0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1450ms (Views: 1449.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-17 12:22:49 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:44:27 -0700
+
+ArgumentError - controller name should not start with a slash:
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:222:in `default_controller_and_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:116:in `normalize_options!'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:64:in `initialize'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:1430:in `new'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:1430:in `add_route'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:1409:in `decomposed_match'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:1390:in `block in match'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:1381:in `each'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:1381:in `match'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:330:in `root'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/mapper.rb:1451:in `root'
+  config/routes.rb:5:in `block in <top (required)>'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:315:in `instance_exec'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:315:in `eval_block'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:293:in `draw'
+  config/routes.rb:1:in `<top (required)>'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/dependencies.rb:222:in `load'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/dependencies.rb:222:in `block in load'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/dependencies.rb:213:in `load_dependency'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/dependencies.rb:222:in `load'
+  (gem) railties-4.0.0.rc1/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+  (gem) railties-4.0.0.rc1/lib/rails/application/routes_reloader.rb:40:in `each'
+  (gem) railties-4.0.0.rc1/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+  (gem) railties-4.0.0.rc1/lib/rails/application/routes_reloader.rb:16:in `reload!'
+  (gem) railties-4.0.0.rc1/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/file_update_checker.rb:75:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/file_update_checker.rb:75:in `execute'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/file_update_checker.rb:84:in `execute_if_updated'
+  (gem) railties-4.0.0.rc1/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+  (gem) railties-4.0.0.rc1/lib/rails/application/finisher.rb:71:in `block (2 levels) in <module:Finisher>'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:426:in `_run__4196170091508721551__prepare__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:74:in `prepare!'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:62:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/29936520/variables" for 127.0.0.1 at 2013-05-17 12:44:27 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:45:24 -0700
+Processing by Devise::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/".
+Maybe you forgot to wrap your route inside the scope block? For example:
+
+    devise_scope :user do
+      match "/some/route" => "some_devise_controller"
+    end
+
+Completed 500 Internal Server Error in 1ms
+
+NameError - uninitialized constant ActionController::UnknownAction:
+  (gem) devise-1.5.4/lib/devise/controllers/internal_helpers.rb:75:in `unknown_action!'
+  (gem) devise-1.5.4/lib/devise/controllers/internal_helpers.rb:58:in `is_devise_resource?'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:396:in `_run__2286698929142084805__process_action__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications.rb:159:in `block in instrument'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications.rb:159:in `instrument'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/base.rb:136:in `process'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/rendering.rb:44:in `process'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal.rb:195:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal.rb:231:in `block in action'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:80:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:48:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:71:in `block in call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:59:in `each'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:59:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:654:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) rack-1.5.2/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+  (gem) rack-1.5.2/lib/rack/head.rb:11:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/flash.rb:241:in `call'
+  (gem) rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+  (gem) rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/query_cache.rb:36:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:366:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__3956576706301169331__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70075883307780/variables" for 127.0.0.1 at 2013-05-17 12:45:24 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:45:41 -0700
+Processing by Devise::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/".
+Maybe you forgot to wrap your route inside the scope block? For example:
+
+    devise_scope :user do
+      match "/some/route" => "some_devise_controller"
+    end
+
+Completed 500 Internal Server Error in 1ms
+
+NameError - uninitialized constant ActionController::UnknownAction:
+  (gem) devise-1.5.4/lib/devise/controllers/internal_helpers.rb:75:in `unknown_action!'
+  (gem) devise-1.5.4/lib/devise/controllers/internal_helpers.rb:58:in `is_devise_resource?'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:396:in `_run__358045740097554100__process_action__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications.rb:159:in `block in instrument'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications.rb:159:in `instrument'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/base.rb:136:in `process'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/rendering.rb:44:in `process'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal.rb:195:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal.rb:231:in `block in action'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:80:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:48:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:71:in `block in call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:59:in `each'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:59:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:654:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) rack-1.5.2/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+  (gem) rack-1.5.2/lib/rack/head.rb:11:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/flash.rb:241:in `call'
+  (gem) rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+  (gem) rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/query_cache.rb:36:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:366:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__515958285045382767__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/37502600/variables" for 127.0.0.1 at 2013-05-17 12:45:41 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 187ms (Views: 144.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/reports.css?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/reports.js?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-17 12:47:08 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:50:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (2.4ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:55:04 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (13.1ms)
+Completed 200 OK in 84ms (Views: 17.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:55:06 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (2.3ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:55:50 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (12.4ms)
+Completed 200 OK in 89ms (Views: 45.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:56:19 -0700
+Processing by Devise::SessionsController#new as */*
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (2.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 12:57:20 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-05-17 12:57:35 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (2.3ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-05-17 12:58:15 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (2.4ms)
+Completed 200 OK in 56ms (Views: 4.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-05-17 12:58:51 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (2.4ms)
+Completed 200 OK in 27ms (Views: 4.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-05-17 12:59:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.1ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb (2.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-05-17 12:59:42 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 1209ms (Views: 1167.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/reports.css?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/typeahead.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:43 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/reports.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-05-17 12:59:44 -0700
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `email`, `encrypted_password`, `updated_at`) VALUES ('2013-05-17 20:01:26', 'admin@example.com', '$2a$10$k5PlI98lHIXXRLsBn4gjROXzt/S.zyCTpqFHOLMqji.yFd6Flrszi', '2013-05-17 20:01:26')[0m
+  [1m[35m (35.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-05-17 13:04:30 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHISimmVoD9i1I+U5fS4DPc05Gvj51JLn3xrFSaKEe0=", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from service at /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'admin@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2013-05-17 20:04:30', `current_sign_in_at` = '2013-05-17 20:04:30', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2013-05-17 20:04:30' WHERE `users`.`id` = 1[0m
+  [1m[35m (33.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 107ms (ActiveRecord: 34.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 13:04:30 -0700
+Processing by Devise::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/".
+Maybe you forgot to wrap your route inside the scope block? For example:
+
+    devise_scope :user do
+      match "/some/route" => "some_devise_controller"
+    end
+
+Completed 500 Internal Server Error in 1ms
+
+NameError - uninitialized constant ActionController::UnknownAction:
+  (gem) devise-1.5.4/lib/devise/controllers/internal_helpers.rb:75:in `unknown_action!'
+  (gem) devise-1.5.4/lib/devise/controllers/internal_helpers.rb:58:in `is_devise_resource?'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:396:in `_run__3652355146474123889__process_action__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications.rb:159:in `block in instrument'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/notifications.rb:159:in `instrument'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/base.rb:136:in `process'
+  (gem) actionpack-4.0.0.rc1/lib/abstract_controller/rendering.rb:44:in `process'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal.rb:195:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_controller/metal.rb:231:in `block in action'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:80:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:48:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:71:in `block in call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:59:in `each'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/journey/router.rb:59:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/routing/route_set.rb:654:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) rack-1.5.2/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+  (gem) rack-1.5.2/lib/rack/head.rb:11:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/flash.rb:241:in `call'
+  (gem) rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+  (gem) rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/query_cache.rb:36:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:366:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__5777535184346129__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/35942520/variables" for 127.0.0.1 at 2013-05-17 13:04:30 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 13:08:26 -0700
+
+
+Started GET "/pages/make_redirect" for 127.0.0.1 at 2013-05-17 13:08:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/pages/make_redirect"):
+  actionpack (4.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0.rc1) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0.rc1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0.rc1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0.rc1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0.rc1) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0.rc1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0.rc1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0.rc1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0.rc1) lib/rails/application.rb:96:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-4.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (15.0ms)
+
+
+Started GET "/pages/make_redirect" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+Processing by PagesController#make_redirect as HTML
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from make_redirect at /home/jonathan/dev/project_monitor/app/controllers/pages_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/report
+Completed 302 Found in 37ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+Processing by ReportsController#index as HTML
+  Rendered reports/index.html.haml within layouts/application (0.7ms)
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from _app_views_layouts_application_html_haml__627313320243267646_36745940 at /home/jonathan/dev/project_monitor/app/views/layouts/application.html.haml:12)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 168ms (Views: 167.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/reports.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:00 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap/typeahead.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/reports.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:01 -0700
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IHISimmVoD9i1I+U5fS4DPc05Gvj51JLn3xrFSaKEe0="}
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from service at /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/pages/make_redirect" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+Processing by PagesController#make_redirect as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.6ms)
+  Rendered /home/jonathan/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 43ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/reports.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/typeahead.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/reports.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:10 -0700
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"swnh0pQqqibxiS4ln22mbKS54d9Bd39cjE8qqmFIgiY=", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from service at /home/jonathan/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138)
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'admin@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2013-05-17 20:09:19', `sign_in_count` = 2, `updated_at` = '2013-05-17 20:09:19' WHERE `users`.`id` = 1
+  [1m[36m (20.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms (ActiveRecord: 21.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/pages/make_redirect" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+Processing by PagesController#make_redirect as HTML
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from make_redirect at /home/jonathan/dev/project_monitor/app/controllers/pages_controller.rb:3)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/report
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+Processing by ReportsController#index as HTML
+  Rendered reports/index.html.haml within layouts/application (0.1ms)
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from _app_views_layouts_application_html_haml__627313320243267646_36745940 at /home/jonathan/dev/project_monitor/app/views/layouts/application.html.haml:12)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/reports.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/typeahead.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/reports.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-17 13:09:19 -0700
+
+
+Started GET "/report" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+Processing by ReportsController#index as HTML
+  Rendered reports/index.html.haml within layouts/application (0.1ms)
+DEPRECATION WARNING: Relation#first with finder options is deprecated. Please build a scope and then call #first on it instead. (called from _app_views_layouts_application_html_haml__627313320243267646_36745940 at /home/jonathan/dev/project_monitor/app/views/layouts/application.html.haml:12)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/reports.css?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/typeahead.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/reports.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-17 13:29:13 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 11:36:47 -0700
+
+Mysql2::Error - Access denied for user 'root'@'localhost' (using password: YES):
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `connect'
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `initialize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:53:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:775:in `current_version'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:783:in `needs_migration?'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:376:in `check_pending!'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:364:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/logger_silence.rb:16:in `silence'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:363:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__1088372903723251258__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70180095991260/variables" for 127.0.0.1 at 2013-05-28 11:36:47 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 11:37:18 -0700
+
+Mysql2::Error - Access denied for user 'root'@'localhost' (using password: YES):
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `connect'
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `initialize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:53:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:775:in `current_version'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:783:in `needs_migration?'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:376:in `check_pending!'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:364:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/logger_silence.rb:16:in `silence'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:363:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__1088372903723251258__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70180095826000/variables" for 127.0.0.1 at 2013-05-28 11:37:18 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 11:38:40 -0700
+
+Mysql2::Error - Access denied for user 'root'@'localhost' (using password: YES):
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `connect'
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `initialize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:53:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:775:in `current_version'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:783:in `needs_migration?'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:376:in `check_pending!'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:364:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/logger_silence.rb:16:in `silence'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:363:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__1088372903723251258__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70180080915660/variables" for 127.0.0.1 at 2013-05-28 11:38:40 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 11:41:37 -0700
+
+Mysql2::Error - Unknown database 'pmdev':
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `connect'
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `initialize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:53:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:775:in `current_version'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:783:in `needs_migration?'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:376:in `check_pending!'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:364:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/logger_silence.rb:16:in `silence'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:363:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__1088372903723251258__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70180096416900/variables" for 127.0.0.1 at 2013-05-28 11:41:37 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 11:42:06 -0700
+
+Mysql2::Error - Unknown database 'pmdev':
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `connect'
+  (gem) mysql2-0.3.11/lib/mysql2/client.rb:44:in `initialize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/connection_handling.rb:53:in `connection'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:775:in `current_version'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:783:in `needs_migration?'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:376:in `check_pending!'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:364:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/logger_silence.rb:16:in `silence'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:363:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__1088372903723251258__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70180078059760/variables" for 127.0.0.1 at 2013-05-28 11:42:06 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 11:44:04 -0700
+
+ActiveRecord::PendingMigrationError - Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.:
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:376:in `check_pending!'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:364:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/logger_silence.rb:16:in `silence'
+  (gem) activerecord-4.0.0.rc1/lib/active_record/migration.rb:363:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:392:in `_run__1088372903723251258__call__callbacks'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.8.0/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:38:in `call_app'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `block in call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:25:in `tagged'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/tagged_logging.rb:67:in `tagged'
+  (gem) railties-4.0.0.rc1/lib/rails/rack/logger.rb:21:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-4.0.0.rc1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) actionpack-4.0.0.rc1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/engine.rb:511:in `call'
+  (gem) railties-4.0.0.rc1/lib/rails/application.rb:96:in `call'
+  (gem) rack-1.5.2/lib/rack/lock.rb:17:in `call'
+  (gem) rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+  (gem) rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/david/.rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70180094839080/variables" for 127.0.0.1 at 2013-05-28 11:44:04 -0700
+  [1m[36m (30.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (25.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20130517165453)
+  [1m[35m (23.3ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (16.2ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`) [0m
+  [1m[35m (15.3ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130517165453')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 11:44:13 -0700
+
+
+Started GET "/pages/make_redirect" for 127.0.0.1 at 2013-05-28 11:44:13 -0700
+Processing by PagesController#make_redirect as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 34ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-05-28 11:44:13 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/david/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.3ms)
+  Rendered /Users/david/.rvm/gems/ruby-2.0.0-p0/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (71.2ms)
+Completed 200 OK in 2149ms (Views: 2113.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/reports.css?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:15 -0700
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/twitter/bootstrap/typeahead.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/reports.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 11:44:16 -0700
